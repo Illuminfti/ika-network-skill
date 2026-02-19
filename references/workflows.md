@@ -31,7 +31,7 @@ sui client faucet
 ```
 
 ### Step 2 — Get IKA
-Visit **https://faucet.ika.xyz/** (not documented anywhere — discovered from example code only).  
+Visit **https://faucet.ika.xyz/** to swap testnet SUI for IKA tokens.  
 Connect your Sui wallet → swap testnet SUI → IKA.
 
 ### Step 3 — Find Your IKA Coin Object ID

@@ -50,11 +50,11 @@ await ikaClient.initialize();
 
 Install SDK: `pnpm add @ika.xyz/sdk`
 
-## Critical Knowledge (Not in Official Docs)
+## Tips & Practical Notes
 
 1. **Use `https://sui-testnet-rpc.publicnode.com`** for testnet, NOT `getFullnodeUrl('testnet')`. The default Sui RPC rate-limits the SDK's multi-call patterns.
 2. **IKA tokens required**: Get them at `https://faucet.ika.xyz/` by swapping SUI for IKA.
-3. **Create encryption keys**: `UserShareEncryptionKeys.fromRootSeedKey(randomBytes(32), Curve.SECP256K1)` (the only factory method, undocumented).
+3. **Create encryption keys**: `UserShareEncryptionKeys.fromRootSeedKey(randomBytes(32), Curve.SECP256K1)` — the factory method for generating key pairs.
 4. **Deprecated API warning**: Do NOT use `requestDWalletDKGFirstRound`, `requestDWalletDKGFirstRoundAsync`, or `requestDWalletDKGSecondRound`. Use `requestDWalletDKG` (v2 API).
 5. **Mainnet RPC**: `https://ikafn-on-sui-2-mainnet.ika-network.net/`
 
@@ -73,13 +73,12 @@ Install SDK: `pnpm add @ika.xyz/sdk`
 | Build AI agent with dWallet signing | [agentic-patterns.md](references/agentic-patterns.md) |
 | Understand security model + trust assumptions | [security-model.md](references/security-model.md) |
 
-## Current Limitations
+## Status Notes
 
 - **EdDSA**: Added Dec 2025, available for Solana/Cardano/Near/Stellar signing
-- **Operators docs**: "Coming Soon" on official docs
-- **Code Examples section**: "Coming Soon" on official docs
-- **Docs site**: Many pages 404; this skill IS the comprehensive documentation
-- **Move integration docs**: Sparse; see [move-integration.md](references/move-integration.md) for what we've reconstructed
+- **Operators docs**: Coming soon on official docs
+- **Code Examples section**: Coming soon on official docs
+- **Move integration**: See [move-integration.md](references/move-integration.md) for extended examples beyond the official guides
 
 ## Key Concepts (30-second version)
 

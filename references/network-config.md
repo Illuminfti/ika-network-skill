@@ -465,7 +465,7 @@ IKA_COIN_ID=<ika-coin-object-id>
 | Security Audits | https://github.com/dwallet-labs/security-audits |
 | Dev Email | dev@dwalletlabs.com |
 
-> ⚠️ As of 2026-02-18: all docs.ika.xyz pages except `/docs/sdk` return 404.  
+> The official docs are actively being expanded. This reference supplements them with practical configuration details.
 > Use this skill + GitHub source as primary reference.
 
 ---

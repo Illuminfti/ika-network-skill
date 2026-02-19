@@ -1,6 +1,6 @@
 # 🦑 Ika Network Developer Skill
 
-> **The documentation Ika deserves.** Complete SDK reference, verified code templates, and production patterns for building with dWallets — because the official docs are 90% broken links.
+> Complete SDK reference, verified code templates, and production patterns for building with dWallets. A community-maintained companion to the [official Ika documentation](https://docs.ika.xyz).
 
 [![SDK Version](https://img.shields.io/badge/@ika.xyz/sdk-v0.2.7-blue)](https://www.npmjs.com/package/@ika.xyz/sdk)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -14,12 +14,12 @@ Ika Network lets Sui smart contracts sign transactions on **any blockchain** (Bi
 
 This repo is:
 
-1. **Complete documentation** — every SDK function, type, and enum verified against the actual installed package
+1. **Hands-on companion** — every SDK function, type, and enum verified against the actual installed package
 2. **Working project template** — `tsc --noEmit` clean, copy and build
 3. **Production patterns** — security, error handling, gas budgeting, agentic architectures
 4. **AI agent skill** — drop into [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenClaw](https://openclaw.ai), or any skill-aware agent
 
-**Why does this exist?** The official Ika docs at `docs.ika.xyz` are a Next.js site where ~90% of pages return 404 or empty content. The SDK itself is solid (8/10), but without docs you're reading source code. This fills the gap.
+This is a community resource that complements the [official docs](https://docs.ika.xyz) with practical examples, copy-paste templates, and patterns we've battle-tested building [Ika Tensei](https://github.com/Illuminfti/ika-tensei).
 
 ---
 
@@ -65,9 +65,9 @@ This creates a dWallet (30-90s), signs a test message (60-120s), and prints the 
 
 ---
 
-## ⚠️ Critical Knowledge (Not in Official Docs)
+## ⚠️ Tips & Tricks
 
-These will save you hours of debugging:
+Patterns we learned building on Ika that'll save you time:
 
 | # | Gotcha | Fix |
 |---|--------|-----|
@@ -75,9 +75,9 @@ These will save you hours of debugging:
 | 2 | `IkaNetworkConfig` is **not exported** | Use `ReturnType<typeof getNetworkConfig>` |
 | 3 | `UserShareEncryptionKeys.create()` **doesn't exist** | Use `UserShareEncryptionKeys.fromRootSeedKey(seed, curve)` |
 | 4 | `.toBytes()` **doesn't exist** on encryption keys | Use `.toShareEncryptionKeysBytes()` |
-| 5 | `requestDWalletDKGFirstRound` / `SecondRound` are **deprecated and throw** | Use `prepareDKGAsync` + `requestDWalletDKG` |
-| 6 | IKA tokens are **required** for every protocol operation | Get from [faucet.ika.xyz](https://faucet.ika.xyz/) (wallet UI only, no API) |
-| 7 | Mainnet RPC is **not** `getFullnodeUrl('mainnet')` | Use `https://ikafn-on-sui-2-mainnet.ika-network.net/` |
+| 5 | V1 API (`requestDWalletDKGFirstRound` / `SecondRound`) is deprecated | Use `prepareDKGAsync` + `requestDWalletDKG` (v2 API) |
+| 6 | IKA tokens are **required** for every protocol operation | Get from [faucet.ika.xyz](https://faucet.ika.xyz/) |
+| 7 | Mainnet has its own RPC endpoint | Use `https://ikafn-on-sui-2-mainnet.ika-network.net/` |
 
 ---
 
@@ -156,7 +156,7 @@ assets/project-template/
 └── tsconfig.json
 ```
 
-Every import is verified. `tsc --noEmit` passes. The `dwallet.ts` contains 20+ inline comments explaining API corrections vs what you'd find in broken docs.
+Every import is verified. `tsc --noEmit` passes. The `dwallet.ts` contains 20+ inline comments explaining API details and practical tips.
 
 ### Move Template
 
