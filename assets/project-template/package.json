@@ -1,0 +1,21 @@
+{
+  "name": "ika-dwallet-project",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ika.xyz/sdk": "0.2.7",
+    "@mysten/sui": "^1.44.0",
+    "@noble/hashes": "^1.7.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "@types/node": "^22.13.4"
+  }
+}

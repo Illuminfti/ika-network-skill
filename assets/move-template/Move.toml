@@ -1,0 +1,56 @@
+[package]
+name = "dwallet_treasury"
+version = "0.0.1"
+edition = "2024.beta"
+
+# ── Dependencies ──────────────────────────────────────────────────────────────
+#
+# Git deps pull from the official Ika repo. The `rev` can be pinned to a commit
+# or tag for reproducibility. Using "main" follows the latest release.
+#
+# LOCAL ALTERNATIVE: Clone https://github.com/dwallet-labs/ika.git and replace
+# the git blocks with:
+#   ika = { local = "../ika/contracts/ika" }
+#   ika_dwallet_2pc_mpc = { local = "../ika/contracts/ika_dwallet_2pc_mpc" }
+#   ika_common = { local = "../ika/contracts/ika_common" }
+#
+[dependencies]
+Sui = {
+  git = "https://github.com/MystenLabs/sui.git",
+  subdir = "crates/sui-framework/packages/sui-framework",
+  rev = "framework/testnet"
+}
+ika = {
+  git = "https://github.com/dwallet-labs/ika.git",
+  subdir = "contracts/ika",
+  rev = "main"
+}
+ika_dwallet_2pc_mpc = {
+  git = "https://github.com/dwallet-labs/ika.git",
+  subdir = "contracts/ika_dwallet_2pc_mpc",
+  rev = "main"
+}
+ika_common = {
+  git = "https://github.com/dwallet-labs/ika.git",
+  subdir = "contracts/ika_common",
+  rev = "main"
+}
+
+# ── Addresses ─────────────────────────────────────────────────────────────────
+#
+# Your package address starts at 0x0 (assigned by the network on publish).
+# The Ika package addresses below are the TESTNET v2 deployed addresses from
+# getNetworkConfig('testnet'). Update for mainnet in [dev-addresses].
+#
+[addresses]
+dwallet_treasury = "0x0"
+
+# Testnet published addresses (v2 — always use the latest/upgraded package):
+ika = "0x1f26bb2f711ff82dcda4d02c77d5123089cb7f8418751474b9fb744ce031526a"
+ika_dwallet_2pc_mpc = "0x6573a6c13daf26a64eb8a37d3c7a4391b353031e223072ca45b1ff9366f59293"
+ika_common = "0x96fc75633b6665cf84690587d1879858ff76f88c10c945e299f90bf4e0985eb0"
+
+# ── Dev overrides (optional) ─────────────────────────────────────────────────
+# Uncomment and point to localnet addresses when testing locally.
+# [dev-addresses]
+# dwallet_treasury = "0x0"
